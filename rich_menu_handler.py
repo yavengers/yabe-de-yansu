@@ -12,17 +12,18 @@ class rich_menu_handler:
         self.event = event
         self.scenario = scenario
         self.response_text = ""
-        self.user = user.User()
 
     def menu_a(self):
         self.response_text = self.scenario['rich_menu_scenario']['register_user']['response_text'] + \
             "\n" + self.event.message.id
         self.reply()
+        return self.event.message.id
 
     def menu_c(self):
         self.response_text = datetime.now().strftime('%Y年%m月%d日 %H:%M:%S') + \
             "\n" + self.event.message.id
         self.reply()
+        return self.event.message.id
 
     def reply(self):
         self.line_bot_api.reply_message(
