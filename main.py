@@ -75,7 +75,7 @@ def handle_message(event):
         response_message = event.message.text + "でやんす"
         prev_message_id = event.message.id
         prev_message_text = requests.get(
-            "https://api-data.line.me/v2/bot/message/%s/content" % str(prev_message_id), headers=request_header)
+            "https://api-data.line.me/v2/bot/message/" + str(prev_message_id) + "/content", headers=request_header)
         print(prev_message_text)
         line_bot_api.reply_message(
             event.reply_token,
