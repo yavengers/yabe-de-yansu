@@ -30,7 +30,7 @@ YOUR_CHANNEL_SECRET = os.environ["YOUR_CHANNEL_SECRET"]
 line_bot_api = LineBotApi(YOUR_CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(YOUR_CHANNEL_SECRET)
 
-request_header = "Authorization: Bearer %s" % (YOUR_CHANNEL_ACCESS_TOKEN)
+request_header = "Authorization: Bearer %s" % YOUR_CHANNEL_ACCESS_TOKEN
 
 
 @app.route("/", methods=['GET'])
