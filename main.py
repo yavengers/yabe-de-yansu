@@ -1,4 +1,4 @@
-from rich_menu_handler import menu_a, rich_menu_handler
+from rich_menu_handler import rich_menu_handler
 from types import resolve_bases
 from typing import Text
 from flask import Flask, request, abort
