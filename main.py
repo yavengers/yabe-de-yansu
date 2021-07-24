@@ -64,7 +64,10 @@ def handle_message(event):
     if event.message.text == scenario['rich_menu_scenario']['register_user']['trigger_message']:
         prev_message_id = rm_handler.menu_a()
         print("id: " + prev_message_id)
-        print(type(prev_message_id))
+        print("request url: " + 'https://api-data.line.me/v2/bot/message/' +
+              prev_message_id + '/content')
+        print("request header: " + request_header)
+
         prev_message_text = requests.get(
             'https://api-data.line.me/v2/bot/message/' + prev_message_id + '/content', headers=request_header)
         print("prev_message" + prev_message_text)
