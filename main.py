@@ -28,8 +28,6 @@ handler = WebhookHandler(YOUR_CHANNEL_SECRET)
 def hello():
     return "hello, world"
 
-# LineMessagingAPIの疎通確認用
-
 
 @app.route("/callback", methods=['POST'])
 def callback():
