@@ -63,19 +63,20 @@ def handle_message(event):
     prev_message_text = ""
     if event.message.text == scenario['rich_menu_scenario']['register_user']['trigger_message']:
         prev_message_id = rm_handler.menu_a()
+        print(prev_message_id)
         prev_message_text = requests.get(
-            'https://api-data.line.me/v2/bot/message/' + str(prev_message_id) + '/content', headers=request_header)
+            'https://api-data.line.me/v2/bot/message/' + prev_message_id + '/content', headers=request_header)
         print("prev_message" + prev_message_text)
     elif event.message.text == scenario['rich_menu_scenario']['get_time_now']['trigger_message']:
         prev_message_id = rm_handler.menu_c()
         prev_message_text = requests.get(
-            'https://api-data.line.me/v2/bot/message/' + str(prev_message_id) + '/content', headers=request_header)
+            'https://api-data.line.me/v2/bot/message/' + prev_message_id + '/content', headers=request_header)
         print("prev_message" + prev_message_text)
     else:
         response_message = event.message.text + "でやんす"
         prev_message_id = event.message.id
         prev_message_text = requests.get(
-            'https://api-data.line.me/v2/bot/message/' + str(prev_message_id) + '/content', headers=request_header)
+            'https://api-data.line.me/v2/bot/message/' + prev_message_id + '/content', headers=request_header)
         print("prev_message" + prev_message_text)
         line_bot_api.reply_message(
             event.reply_token,
