@@ -54,6 +54,8 @@ def handle_message(event):
     rm_handler = rich_menu_handler(line_bot_api, event)
     if event.message.text == "テキストA":
         rm_handler.menu_a()
+    elif event.message.text == "テキストC":
+        rm_handler.menu_c()
     else:
         response_message = event.message.text + "でやんす"
         line_bot_api.reply_message(

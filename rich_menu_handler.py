@@ -13,3 +13,10 @@ class rich_menu_handler:
             self.event.reply_token,
             TextSendMessage(text="リッチメニューのAが押されたでやんす")
         )
+
+    def menu_c(self):
+        response_text = "userId: " + self.event.source.userId + "\n" + "リッチメニューのCが押されたでやんす"
+        self.line_bot_api.reply_message(
+            self.event.reply_token,
+            TextSendMessage(text=response_text)
+        )
