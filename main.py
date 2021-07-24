@@ -52,7 +52,7 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     if event.message.text == "テキストA":
-        menu_a()
+        menu_a(line_bot_api, event)
     else:
         response_message = event.message.text + "でやんす"
         line_bot_api.reply_message(
