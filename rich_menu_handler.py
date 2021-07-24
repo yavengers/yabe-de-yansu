@@ -19,7 +19,7 @@ class rich_menu_handler:
         self.reply()
 
     def menu_c(self):
-        self.response_text = datetime.now()
+        self.response_text = datetime.now().strftime('%Y年%m月%d日 %H:%M:%S')
         self.reply()
 
     def reply(self):
