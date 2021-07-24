@@ -1,4 +1,4 @@
-from rich_menu_handler import menu_a
+from rich_menu_handler import menu_a, rich_menu_handler
 from types import resolve_bases
 from typing import Text
 from flask import Flask, request, abort
@@ -51,8 +51,9 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
+    rm_handler = rich_menu_handler(line_bot_api, event)
     if event.message.text == "テキストA":
-        menu_a(line_bot_api, event)
+        rm_handler.menu_a()
     else:
         response_message = event.message.text + "でやんす"
         line_bot_api.reply_message(
