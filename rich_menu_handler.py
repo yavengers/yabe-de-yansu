@@ -15,7 +15,7 @@ class rich_menu_handler:
         )
 
     def menu_c(self):
-        response_text = "userId: " + self.event.source.userId + "\n" + "リッチメニューのCが押されたでやんす"
+        response_text = "userId: " + self.event.source.user_id + "\n" + "リッチメニューのCが押されたでやんす"
         self.line_bot_api.reply_message(
             self.event.reply_token,
             TextSendMessage(text=response_text)
