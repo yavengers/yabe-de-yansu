@@ -19,11 +19,11 @@ class rich_menu_handler:
         self.reply()
 
     def menu_c(self):
-        self.response_text = datetime
+        self.response_text = datetime.now()
         self.reply()
 
     def reply(self):
         self.line_bot_api.reply_message(
             self.event.reply_token,
-            TextSendMessage(text="名前を入力するでやんす")
+            TextSendMessage(text=self.response_text)
         )
