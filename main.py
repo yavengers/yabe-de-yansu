@@ -55,11 +55,11 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    rm_handler = rich_menu_handler(line_bot_api, event)
+    rm_handler = rich_menu_handler(line_bot_api, event, scenario)
     # if event.message.text == "ユーザ情報を登録するでやんす":
     if event.message.text == scenario['scenario']['register_user']['trigger_message']:
         rm_handler.menu_a()
-    elif event.message.text == "今何時？":
+    elif event.message.text == scenario['scenario']['get_time_now']['trigger_message']:
         rm_handler.menu_c()
     else:
         response_message = event.message.text + "でやんす"

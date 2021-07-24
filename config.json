@@ -2,7 +2,8 @@
     "scenario": {
         "register_user": {
             "trigger_message": "ユーザ情報を登録するでやんす",
-            "endpoint": "rich_menu_handler.menu_a"
+            "endpoint": "rich_menu_handler.menu_a",
+            "response_text": "名前を入力するでやんす"
         },
         "get_time_now": {
             "trigger_message": "今何時？",
