@@ -1,6 +1,7 @@
+from rich_menu_handler import menu_a
 from types import resolve_bases
 from typing import Text
-from flask import Flask, Blueprint, request, abort
+from flask import Flask, request, abort
 import os
 
 
@@ -50,11 +51,14 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    response_message = event.message.text + "でやんす"
-    line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=response_message)
-    )
+    if event.message.text == "テキストA":
+        menu_a()
+    else:
+        response_message = event.message.text + "でやんす"
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text=response_message)
+        )
 
 
 if __name__ == "__main__":
