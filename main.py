@@ -28,8 +28,6 @@ handler = WebhookHandler(YOUR_CHANNEL_SECRET)
 def hello():
     return "hello, world"
 
-# LineMessagingAPIの疎通確認用
-
 
 @app.route("/callback", methods=['POST'])
 def callback():
@@ -37,7 +35,7 @@ def callback():
     signature = request.headers['X-Line-Signature']
 
     # get request body as text
-    body = request.get_data(as_text=True)
+    body = request.get_data(as_text=True) + "でやんす"
     app.logger.info("Request body: " + body)
 
     # handle webhook body
