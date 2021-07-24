@@ -6,8 +6,7 @@ class User:
     name = ""
     # timestamp = datetime()
 
-    def __init__(self, id):
-        self.id = id
+    def __init__(self):
         pass
 
     def set_user_name(self, message):

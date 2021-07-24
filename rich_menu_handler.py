@@ -9,7 +9,7 @@ class rich_menu_handler:
     def __init__(self, line_bot_api, event):
         self.line_bot_api = line_bot_api
         self.event = event
-        self.user = user.User(int(event.source.user_id))
+        self.user = user.User()
 
     def menu_a(self):
         self.line_bot_api.reply_message(
