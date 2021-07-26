@@ -26,7 +26,8 @@ class rich_menu_handler:
         return self.event.message.id
 
     def reply(self):
+        userId = self.event.source.user_id
         self.line_bot_api.reply_message(
             self.event.reply_token,
-            TextSendMessage(text=self.response_text)
+            TextSendMessage(text=self.response_text + "\n" + userId)
         )
