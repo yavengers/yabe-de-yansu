@@ -3,17 +3,20 @@
         "register_user": {
             "trigger_message": "ユーザ情報を登録するでやんす",
             "endpoint": "rich_menu_handler.menu_a",
-            "response_text": "名前を入力するでやんす"
+            "response_text": "名前を入力するでやんす",
+            "route": "1"
         },
         "get_time_now": {
             "trigger_message": "今何時？",
-            "endpoint": "rich_menu_handler.menu_c"
+            "endpoint": "rich_menu_handler.menu_c",
+            "route": "2"
         }
     },
     "register_user_scenario": {
         "set_name": {
-            "trigger_message": "名前を入れるでやんす",
-            "endpoint": "register_user_handler.set_name"
+            "trigger_message": "名前を入力するでやんす",
+            "endpoint": "register_user_handler.set_name",
+            "route": "1"
         }
     }
 }
