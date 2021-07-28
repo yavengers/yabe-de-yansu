@@ -65,7 +65,7 @@ def handle_message(event):
     elif event.message.text == scenario['rich_menu_scenario']['get_time_now']['trigger_message']:
         prev_message_id = rm_handler.menu_c()
     else:
-        response_message = event.message.text + "でやんす"
+        response_message = event.message.text + "でやんすでやんす"
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=response_message)
